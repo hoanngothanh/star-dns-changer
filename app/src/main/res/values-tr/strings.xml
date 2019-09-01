@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Hakkında</string>
     <string name="about_app">Star DNS Değiştirici Hakkında</string>
-    <string name="app_name">Star DNS Değiştirici</string>
+    <string name="app_name">Free DNS Değiştirici</string>
     <string name="choose_dns_server">DNS Sunucusu Seçiniz..</string>
     <string name="custom_dns">Özel DNS Sunucusu</string>
     <string name="enter_valid_dns">Lütfen geçerli bir DNS sunucusu giriniz.</string>

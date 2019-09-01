@@ -81,9 +81,9 @@
       "secondDNS": "77.88.8.1"
     },
     {
-      "name": "censurfridns.dk",
-      "firstDNS": "91.239.100.100",
-      "secondDNS": "89.233.43.71"
+      "name": "Adguard",
+      "firstDNS": "176.103.130.130",
+      "secondDNS": "176.103.130.131"
     }
   ]
 }

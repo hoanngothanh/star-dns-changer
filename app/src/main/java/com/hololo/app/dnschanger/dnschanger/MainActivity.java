@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements IDNSView, DialogI
         setContentView(R.layout.activity_main);
         DaggerDNSComponent.builder().applicationComponent(DNSChangerApp.getApplicationComponent()).dNSModule(new DNSModule(this)).build().inject(this);
         ButterKnife.bind(this);
-        initViews();
+//        initViews();
         getServiceStatus();
         parseIntent();
     }
