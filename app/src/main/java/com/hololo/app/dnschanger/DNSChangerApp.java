@@ -20,7 +20,7 @@ public class DNSChangerApp extends Application {
         super.onCreate();
 
         //di
-        applicationComponent = DaggerApplicationComponent.builder()
+        applicationComponent =DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
                 .build();
 

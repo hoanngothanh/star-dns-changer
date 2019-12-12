@@ -11,6 +11,11 @@
       "secondDNS": "208.67.220.220"
     },
     {
+      "name": "Cloudflare DNS",
+      "firstDNS": "1.1.1.1",
+      "secondDNS": "1.1.1.1"
+    },
+    {
       "name": "Level3",
       "firstDNS": "209.244.0.3",
       "secondDNS": "209.244.0.4"

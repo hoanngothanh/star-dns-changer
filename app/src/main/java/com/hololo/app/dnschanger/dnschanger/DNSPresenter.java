@@ -17,10 +17,10 @@ import io.reactivex.functions.Consumer;
 
 import static com.hololo.app.dnschanger.dnschanger.DNSService.DNS_MODEL;
 
-class DNSPresenter {
+public class DNSPresenter {
 
-    static final int SERVICE_OPEN = 1;
-    static final int SERVICE_CLOSE = 0;
+    public static final int SERVICE_OPEN = 1;
+    public static final int SERVICE_CLOSE = 0;
 
     private IDNSView view;
     private RxBus rxBus;
@@ -35,7 +35,7 @@ class DNSPresenter {
         subscribe();
     }
 
-    private void subscribe() {
+    public void subscribe() {
         rxBus.getEvents().subscribe(new Consumer<Object>() {
             @Override
             public void accept(Object o) throws Exception {
@@ -50,11 +50,11 @@ class DNSPresenter {
         });
     }
 
-    void stopService() {
+    public void stopService() {
         rxBus.sendEvent(new StopEvent());
     }
 
-    void startService(DNSModel dnsModel) {
+    public void startService(DNSModel dnsModel) {
         Intent intent = new Intent(context, DNSService.class);
         intent.putExtra(DNS_MODEL, dnsModel);
 

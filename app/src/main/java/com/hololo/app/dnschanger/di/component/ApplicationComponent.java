@@ -7,6 +7,8 @@ import com.google.gson.Gson;
 import com.hololo.app.dnschanger.DNSChangerApp;
 import com.hololo.app.dnschanger.di.module.ApplicationModule;
 import com.hololo.app.dnschanger.dnschanger.DNSService;
+import com.hololo.app.dnschanger.tv.LeanbackBrowseFragment;
+import com.hololo.app.dnschanger.tv.TvActivity;
 import com.hololo.app.dnschanger.utils.RxBus;
 
 import javax.inject.Singleton;
@@ -28,5 +30,5 @@ public interface ApplicationComponent {
     Gson gson();
 
     void inject(DNSService service);
-
+    void inject (LeanbackBrowseFragment leanbackBrowseFragment);
 }

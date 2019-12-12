@@ -7,15 +7,15 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.VpnService;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.util.Patterns;
@@ -48,7 +48,8 @@ import butterknife.OnClick;
 
 import static com.hololo.app.dnschanger.dnschanger.DNSPresenter.SERVICE_OPEN;
 
-public class MainActivity extends AppCompatActivity implements IDNSView, DialogInterface.OnClickListener {
+public class MainActivity extends AppCompatActivity
+        implements IDNSView, DialogInterface.OnClickListener {
 
     private static final int REQUEST_CONNECT = 21;
     private static final Pattern IP_PATTERN = Patterns.IP_ADDRESS;
@@ -85,9 +86,11 @@ public class MainActivity extends AppCompatActivity implements IDNSView, DialogI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DaggerDNSComponent.builder().applicationComponent(DNSChangerApp.getApplicationComponent()).dNSModule(new DNSModule(this)).build().inject(this);
+        DaggerDNSComponent.builder().applicationComponent(
+                DNSChangerApp.getApplicationComponent())
+                .dNSModule(new DNSModule(this)).build().inject(this);
         ButterKnife.bind(this);
-//        initViews();
+        initViews();
         getServiceStatus();
         parseIntent();
     }
@@ -323,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements IDNSView, DialogI
     }
 
     private CharSequence[] getDNSItems() {
-        CharSequence[] result = new CharSequence[17];
+        CharSequence[] result = new CharSequence[18];
 
         try {
             InputStream is = getAssets().open("dns_servers.json");

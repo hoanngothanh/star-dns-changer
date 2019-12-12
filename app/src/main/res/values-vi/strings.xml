@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VozDNS</string>
+    <string name="about">Thôn</string>
+    <string name="about_app">Về VOZ DNS</string>
+    <string name="auto_start">Khởi động lại khi bật máy</string>
+    <string name="cancel">Huỷ</string>
+    <string name="choose_dns_server">Chọn DNS Server</string>
+    <string name="custom_dns">Thêm DNS mới</string>
+    <string name="dns_starting">DNS đang bắt đầu</string>
+    <string name="enter_valid_dns">"Vui lòng nhập đúng địa chỉ DNS "</string>
+    <string name="general_settings">Cài đặt chung</string>
+    <string name="send_feedback">Gửi phản hồi</string>
+    <string name="send_mail">Gửi Email</string>
+    <string name="service_ready">DNS đã sẵn sàng chạy</string>
+    <string name="service_started">DNS đã khởi động xong</string>
+    <string name="service_stoppped">DNS đã dừng lại</string>
+    <string name="settings">Cài đặt</string>
+    <string name="start">"Thay đổi "</string>
+    <string name="stop">Dừng</string>
+    <string name="tell_us_what_you_think">"Cho chúng tôi cảm nghĩ của bạn "</string>
+    <string name="turn_on">Bật DNS</string>
+    <string name="version">Phiên bản %1$s</string>
+    <string name="_2017_hololo_inc" translatable="false">\@2019 From VOZ with love</string>
+</resources>

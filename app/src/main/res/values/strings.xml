@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Free DNS Changer - No Ads</string>
+    <string name="app_name">VozDNS</string>
     <string name="start">Change It!</string>
     <string name="stop">Stop</string>
     <string name="enter_valid_dns">Enter valid DNS Server please.</string>
@@ -12,9 +12,8 @@
     <string name="about">About</string>
     <string name="tell_us_what_you_think">Tell us what you think</string>
     <string name="send_feedback">Send Feedback</string>
-    <string name="_2017_hololo_inc" translatable="false">\@2017 Hololo Inc.</string>
+    <string name="_2017_hololo_inc" translatable="false">\@2019 VOZ Comunity</string>
     <string name="version">Version %1$s</string>
-    <string name="about_app">About Star DNS Changer</string>
     <string name="send_mail">Send mail…</string>
     <string name="cancel">Cancel</string>
     <string name="settings">Settings</string>
@@ -23,4 +22,5 @@
     <string name="turn_on">Turn On DNS</string>
     <string name="dns_starting">DNS starting.</string>
     <string name="general_settings">General Settings</string>
+    <string name="about_app">About VOZ DNS</string>
 </resources>

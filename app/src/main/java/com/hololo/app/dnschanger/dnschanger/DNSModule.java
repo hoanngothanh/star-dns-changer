@@ -6,7 +6,6 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-@ActivityScope
 public class DNSModule {
 
     private IDNSView idnsView;
