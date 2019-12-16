@@ -7,15 +7,6 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.VpnService;
 import android.os.Bundle;
-import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.util.Patterns;
@@ -27,6 +18,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
+
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.hololo.app.dnschanger.DNSChangerApp;
 import com.hololo.app.dnschanger.R;
@@ -67,10 +68,8 @@ public class MainActivity extends AppCompatActivity
     Gson gson;
     @BindView(R.id.app_bar_image)
     ImageView appBarImage;
-    @BindView(R.id.toolbar)
+
     Toolbar toolbar;
-    @BindView(R.id.appbar)
-    AppBarLayout appbar;
     @BindView(R.id.activity_main)
     CoordinatorLayout activityMain;
     @BindView(R.id.collapsingToolbar)
@@ -209,8 +208,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void initViews() {
-        toolbar.setTitle("");
+        toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("");
         logo.bringToFront();
         logo.requestLayout();
         logo.invalidate();
@@ -261,11 +261,10 @@ public class MainActivity extends AppCompatActivity
     }
 
     private DNSModel getDnsModel() {
-        DNSModel dnsModel = new DNSModel();
+        DNSModel dnsModel = new DNSModel(getString(R.string.custom_dns), "0.0.0.0", "0.0.0.0");
         String first = firstDnsEdit.getText().toString();
         String second = secondDnsEdit.getText().toString();
 
-        dnsModel.setName(getString(R.string.custom_dns));
 
         if (dnsList != null)
             for (DNSModel model : dnsList) {

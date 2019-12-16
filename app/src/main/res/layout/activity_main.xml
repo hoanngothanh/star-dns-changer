@@ -19,8 +19,7 @@
             android:id="@+id/collapsingToolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
-            app:toolbarId="@+id/toolbar">
+            app:contentScrim="?attr/colorPrimary">
 
             <ImageView
                 android:id="@+id/app_bar_image"
@@ -30,7 +29,7 @@
                 android:src="@drawable/dns_changer_top_bg" />
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/tool_bar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize" />
 

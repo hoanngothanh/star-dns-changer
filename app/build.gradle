@@ -1,13 +1,17 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android-extensions'
+
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 
+androidExtensions {
+    experimental = true
+}
 android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.hoanngothanh.vozdnschanger"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0.0"
@@ -33,6 +37,8 @@ android {
     kapt {
         generateStubs = true
     }
+
+
 
 }
 

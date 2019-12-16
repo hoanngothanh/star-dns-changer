@@ -182,7 +182,7 @@ public class DNSService extends VpnService {
             intent = new Intent(context, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-            builder.setContentTitle(dnsModel.getName()+": "+ dnsModel.getFirstDns())                            // required
+            builder.setContentTitle(dnsModel.getName() +": "+ dnsModel.getFirstDns())                            // required
                     .setSmallIcon(android.R.drawable.ic_popup_reminder)   // required
                     .setContentText(dnsModel.getSecondDns()) // required
                     .setDefaults(Notification.DEFAULT_ALL)
@@ -195,7 +195,7 @@ public class DNSService extends VpnService {
             intent = new Intent(context, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-            builder.setContentTitle(dnsModel.getName()+": "+ dnsModel.getFirstDns())                            // required
+            builder.setContentTitle(dnsModel.getName() +": "+ dnsModel.getFirstDns())                            // required
                     .setSmallIcon(android.R.drawable.ic_popup_reminder)   // required
                     .setContentText(dnsModel.getSecondDns()) // required
                     .setDefaults(Notification.DEFAULT_ALL)
