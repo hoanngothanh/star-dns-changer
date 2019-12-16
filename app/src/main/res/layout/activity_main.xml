@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
@@ -9,136 +9,105 @@
     android:focusableInTouchMode="true"
     tools:context="com.hololo.app.dnschanger.dnschanger.MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:background="#7eb9d9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="164dp"
-        android:fitsSystemWindows="true">
+        android:layout_height="?attr/actionBarSize" />
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsingToolbar"
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary">
-
-            <ImageView
-                android:id="@+id/app_bar_image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/dns_changer_top_bg" />
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/tool_bar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize" />
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <com.hololo.app.dnschanger.utils.ui.BehaviorScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="50dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="52dp"
-                android:animateLayoutChanges="true"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <Button
-                    android:id="@+id/chooseButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/button_blue"
-                    android:fontFamily="@font/roboto_bold"
-                    android:foreground="?selectableItemBackground"
-                    android:text="@string/choose_dns_server"
-                    android:textAllCaps="false"
-                    android:textColor="#2a333a"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/firstDnsEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/edittext_border"
-                    android:ems="10"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="center"
-                    android:hint="@string/dns_server_1"
-                    android:inputType="phone"
-                    android:textColor="@color/colorWhite"
-                    android:textColorHint="@color/colorWhite"
-                    android:textCursorDrawable="@null"
-                    android:textSize="26sp" />
-
-
-                <EditText
-                    android:id="@+id/secondDnsEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:background="@drawable/edittext_border"
-                    android:ems="10"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="center"
-                    android:hint="@string/dns_server_2"
-                    android:inputType="phone"
-                    android:textColor="@color/colorWhite"
-                    android:textColorHint="@color/colorWhite"
-                    android:textCursorDrawable="@null"
-                    android:textSize="26sp" />
-
-
-            </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="52dp"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <Button
-                android:id="@+id/startButton"
+                android:id="@+id/chooseButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="32dp"
-                android:background="@drawable/button"
-                android:foreground="?selectableItemBackground"
-                android:text="@string/start"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/button_blue"
                 android:fontFamily="@font/roboto_bold"
+                android:foreground="?selectableItemBackground"
+                android:text="@string/choose_dns_server"
+                android:textAllCaps="false"
+                android:textColor="#2a333a"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/firstDnsEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:hint="@string/dns_server_1"
+                android:inputType="phone"
                 android:textColor="@color/colorWhite"
-                android:textSize="20sp" />
+                android:textColorHint="@color/colorWhite"
+                android:textCursorDrawable="@null"
+                android:textSize="26sp" />
 
-        </FrameLayout>
 
-    </com.hololo.app.dnschanger.utils.ui.BehaviorScrollView>
+            <EditText
+                android:id="@+id/secondDnsEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:hint="@string/dns_server_2"
+                android:inputType="phone"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textCursorDrawable="@null"
+                android:textSize="26sp" />
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:elevation="8dp"
-        android:src="@drawable/ic_launcher"
-        app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="center_horizontal|bottom" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/roboto_bold"
+            android:foreground="?selectableItemBackground"
+            android:text="@string/start"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
