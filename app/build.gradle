@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
@@ -7,6 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 androidExtensions {
     experimental = true
 }
+
 android {
     compileSdkVersion 29
     defaultConfig {
@@ -107,6 +107,7 @@ dependencies {
     //Butterknife
     implementation 'com.jakewharton:butterknife:8.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
+    kapt 'com.jakewharton:butterknife-compiler:8.2.1'
 
     testImplementation 'junit:junit:4.12'
     implementation 'com.google.android.material:material:1.0.0'

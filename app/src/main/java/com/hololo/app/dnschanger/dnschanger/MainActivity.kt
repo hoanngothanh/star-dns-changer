@@ -23,27 +23,24 @@ import com.hololo.app.dnschanger.dnschanger.DNSPresenter.SERVICE_OPEN
 import com.hololo.app.dnschanger.model.DNSModel
 import com.hololo.app.dnschanger.model.DNSModelJSON
 import com.hololo.app.dnschanger.settings.SettingsActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
 import javax.inject.Inject
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), IDNSView, DialogInterface.OnClickListener {
-
 
     @Inject
     lateinit var presenter: DNSPresenter
     @Inject
     lateinit var gson: Gson
-
-
     private var dnsList: List<DNSModel>? = null
 
     private val dnsModel: DNSModel
         get() {
-            val dnsModel = DNSModel(getString(R.string.custom_dns), "0.0.0.0", "0.0.0.0")
+            val dnsModel = DNSModel(getString(R.string.custom_dns),
+                    "0.0.0.0", "0.0.0.0")
             val first = firstDnsEdit!!.text.toString()
             val second = secondDnsEdit!!.text.toString()
-
 
             if (dnsList != null)
                 for (model in dnsList!!) {
@@ -197,7 +194,8 @@ class MainActivity : AppCompatActivity(), IDNSView, DialogInterface.OnClickListe
         secondDnsEdit!!.setText("")
         chooseButton!!.isEnabled = true
         chooseButton!!.setText(R.string.choose_dns_server)
-        chooseButton!!.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null)
+        chooseButton!!.setCompoundDrawablesWithIntrinsicBounds(null,
+                null, null, null)
     }
 
     private fun serviceStarted() {
@@ -207,7 +205,8 @@ class MainActivity : AppCompatActivity(), IDNSView, DialogInterface.OnClickListe
         secondDnsEdit!!.isEnabled = false
         chooseButton!!.isEnabled = false
         val drawable = ContextCompat.getDrawable(this, R.drawable.ic_vpn_key_black_24dp)
-        drawable!!.setBounds(40, 0, drawable.intrinsicHeight + 40, drawable.intrinsicWidth)
+        drawable!!.setBounds(40, 0,
+                drawable.intrinsicHeight + 40, drawable.intrinsicWidth)
         chooseButton!!.setCompoundDrawables(drawable, null, null, null)
     }
 
@@ -219,7 +218,6 @@ class MainActivity : AppCompatActivity(), IDNSView, DialogInterface.OnClickListe
         setSupportActionBar(tool_bar)
         supportActionBar!!.title = ""
 
-
         val filters = arrayOfNulls<InputFilter>(1)
         filters[0] = InputFilter { source, start, end, dest, dstart, dend ->
             if (end > start) {
@@ -227,10 +225,14 @@ class MainActivity : AppCompatActivity(), IDNSView, DialogInterface.OnClickListe
                 val resultingTxt = destTxt.substring(0, dstart) +
                         source.subSequence(start, end) +
                         destTxt.substring(dend)
-                if (!resultingTxt.matches(("^\\d{1,3}(\\." + "(\\d{1,3}(\\.(\\d{1,3}(\\.(\\d{1,3})?)?)?)?)?)?").toRegex())) {
+                if (!resultingTxt
+                                .matches(("^\\d{1,3}(\\." +
+                                        "(\\d{1,3}(\\.(\\d{1,3}(\\.(\\d{1,3})?)?)?)?)?)?")
+                                        .toRegex())) {
                     return@InputFilter ""
                 } else {
-                    val splits = resultingTxt.split("\\.".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+                    val splits = resultingTxt.split("\\.".toRegex())
+                            .dropLastWhile { it.isEmpty() }.toTypedArray()
                     for (i in splits.indices) {
                         if (Integer.valueOf(splits[i]) > 255) {
                             return@InputFilter ""
@@ -252,7 +254,6 @@ class MainActivity : AppCompatActivity(), IDNSView, DialogInterface.OnClickListe
         }
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
@@ -265,14 +266,12 @@ class MainActivity : AppCompatActivity(), IDNSView, DialogInterface.OnClickListe
         super.onActivityResult(requestCode, resultCode, data)
     }
 
-
     private fun openChooser() {
         val items = dnsItems
         val dialog = AlertDialog.Builder(this)
                 .setItems(items, this)
                 .setTitle(R.string.choose_dns_server)
-                .setNegativeButton(R.string.cancel)
-                { dialog, _ -> dialog.dismiss() }
+                .setNegativeButton(R.string.cancel) { dialog, _ -> dialog.dismiss() }
                 .create()
         val listView = dialog.listView
         listView.divider = ContextCompat.getDrawable(this, R.drawable.divider) // set color
